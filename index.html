@@ -14,9 +14,11 @@
   <title>Let's React!</title>
 </head>
 <body>
-
+ 
   <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
   <div id="app">React has not rendered yet</div>
+  <div id="data">React has not rendered yet</div>
+
 
   
   <!-- JAVASCRIPT -->
@@ -130,7 +132,7 @@ fetch('https://api.github.com/users/google/repos')
   .then(function(response){
     response.json().then(function(json){
       var myData = json;
-      console.log(myData);
+      document.getElementById('data').innerHTML = myData;
      })
    });
     // RENDER REACT TO THE DOM - WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
