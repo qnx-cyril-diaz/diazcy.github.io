@@ -16,7 +16,7 @@
 <body>
  
   <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
-  <center><h1> Please VOTE for Meal Of the Month</h1></center>
+  <center><h1> Please VOTE for Meal of the Month</h1></center>
   <div id="app">React has not rendered yet</div>
  
 
@@ -186,6 +186,9 @@ fetch('https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&a
 		);
 	 
      })
+   })
+   .catch(function(error){
+            document.getElementById("app").innerHTML = "There is something wrong";
    });
    
 
