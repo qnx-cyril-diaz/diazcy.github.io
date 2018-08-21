@@ -16,8 +16,9 @@
 <body>
  
   <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
+  <center><h1> Please VOTE for Meal Of the Month</h1></center>
   <div id="app">React has not rendered yet</div>
-  <div id="data">React has not rendered yet</div>
+ 
 
 
   
@@ -25,6 +26,8 @@
 <script type="text/babel">
 
 class DinnerVote extends React.Component{
+
+
     render(){
         var food = this.props.food;
         var foodMap = food.map(function(foody){
@@ -32,8 +35,8 @@ class DinnerVote extends React.Component{
                         width: 250,
                         display: "inline-block",
                         height: 410,
-                        padding: 0,
-                        margin:35,
+                        padding: 20,
+                        margin: 25,
                         backgroundColor: "#FFF",
                         WebkitFilter: "drop-shadow( 0px 0px 5px #555)",
                         filter: "drop-shadow( 0px 0px 5px #555)"
@@ -43,6 +46,7 @@ class DinnerVote extends React.Component{
                     <Image img= {foody.img}/>    
                     <Profile profile={foody.profile} /> 
                     <Vote />
+					<Share />
                 </div>
             );
         });
@@ -54,6 +58,25 @@ class DinnerVote extends React.Component{
          );
     }
    }
+class Share extends React.Component{
+    render(){
+        var imgStyle = {
+                padding: 10,
+                width: 30,
+                height: 30
+            }
+        return(
+		  <span>
+            <img src="https://9to5mac.com/wp-content/uploads/sites/6/2017/03/twitter-app.jpg?quality=82&strip=all&w=1024"style={imgStyle} alt="food" />
+            <img src="data:image/png;base64,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"style={imgStyle} alt="food" />
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz89lHllBntWTXyyc7avYbUjg8bsB2ctFwa0EWsgBlf_FN4qlXUA" style={imgStyle} alt="food" />
+			<img src="https://cdn.shopify.com/s/files/1/1050/7026/products/qyE4KyJ.jpeg?v=1461262617"style={imgStyle} alt="food" />
+			<img src="http://icons-for-free.com/icon/download-logo_pin_pinterest_share_social_icon-232809.png" style={imgStyle} alt="food" />
+		  </span>
+		)
+    }
+}
+
 
 class Image extends React.Component{
     render(){
@@ -118,45 +141,53 @@ class Total extends React.Component{
         var style = {
             fontSize: 15,
             textAlign: "center"
+			
         }
+		var sytleButton = {
+			margin : 10,
+			borderRadius: 29
+		}
         return(
             <div style={style}>
-                <button onClick={this.onButtonAdd} >Like +1</button><br/>
-                <button onClick={this.onButtonSubtract} >UnLike -1</button>
+                <button onClick={this.onButtonAdd} style={sytleButton} >Like +1</button><br/>
+                <button onClick={this.onButtonSubtract} style={sytleButton} >UnLike -1</button>
                 <p>Total : {this.state.vote} </p>
             </div>
         );
     }
 }
-fetch('https://api.github.com/users/google/repos')
+
+fetch('https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=0029d315b37941d2b8088ac8275f325b&gallery_id=72157672546497728&format=json&nojsoncallback=1')
   .then(function(response){
     response.json().then(function(json){
       var myData = json;
-      document.getElementById('data').innerHTML = myData;
+	  var photo = myData.photos.photo;
+	  var food =[];
+	   for(var i= 0; i < photo.length; i++){
+	      var serverId = photo[i].server;
+		  var id =  photo[i].id;
+		  var secret =  photo[i].secret;
+	      var farm = photo[i].farm;
+		  var title = photo[i].title;
+		  
+		  var foodi = 
+		       {
+			      id : id,
+				  profile: title,
+				  img : `https://farm${farm}.staticflickr.com/${serverId}/${id}_${secret}.jpg`
+			   }
+		 
+		 food.push(foodi)
+		}
+     console.log(food);  
+	 ReactDOM.render(
+		<DinnerVote food={food}/>,
+		document.getElementById("app")
+		);
+	 
      })
    });
-    // RENDER REACT TO THE DOM - WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
-var food =[
-    {
-        id: 1,
-        img: "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&h=350",
-        profile: "Beef Lamb"
-    },
-    {
-        id: 2,
-        img: "https://images.pexels.com/photos/1027810/pexels-photo-1027810.jpeg?auto=compress&cs=tinysrgb&h=350",
-        profile: "Crispy Pata"
-    },
-    {
-        id: 3,
-        img: "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1492688483000/photosp/ffd52b5d-95da-4f59-a006-c933e6484fc8/stock-photo-bread-food-kitchen-fork-delicious-thanksgiving-pork-thanks-giving-susages-ffd52b5d-95da-4f59-a006-c933e6484fc8.jpg",
-        profile: "Porkchop"
-    }]    
-ReactDOM.render(
-    <DinnerVote food={food}/>,
-    document.getElementById("app")
-);
-    
+   
 
 </script>
 
